@@ -1,0 +1,28 @@
+<!-- Faz 2 campos, no formulario dos dois campos -->
+
+<form *ngFor="let reservas of reservas">
+  <div class="form-group">
+      <label for="reservas.tempoMinimo">Quantidade de dias minimos</label>
+      <input type="number" class="form-control" id="reservas.tempoMinimo" name="fewDays" aria-describedby="emailHelp"
+          value="2" disabled>
+  </div>
+  <div class="form-group">
+      <label for="reservas.tempoMaximo">Quantidade de dias maximo</label>
+      <input [(ngModel)]="reservas.tempoMaximo" type="text" class="form-control" id="reservas.tempoMaximo" name="allDays" aria-describedby="emailHelp"
+          placeholder="Digite a quantide de dias máxima que voce deseja ficar com o filme">
+  </div>
+  <div class="form-group">
+    <label for="reserva.Filmes">Nome do Filme</label>
+    <input [(ngModel)]="reserva.Filmes" type="text" class="form-control" id="reserva.Filmes" name="movie_nome" aria-describedby="emailHelp"
+        value="{{reservas.Filmes}}" disabled="disabled">
+</div>
+
+<div class="form-group">
+  <label for="reserva.preco">Valor da locação</label>
+  <input [(ngModel)]="reservas.preco" type="text" class="form-control" id="reserva.preco" name="movie_preco" aria-describedby="emailHelp"
+      value="{{reservas.preco}}" disabled="disabled">
+</div>
+
+  <button type="submit" name="action" (click)=reservar() class="btn btn-outline-dark">
+      Reservar</button>
+</form>

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Filmes que voce reservou!</h4>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nome do filme</th>
+          <th>Tempo de Locacao</th>
+          <th>Preco</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reserva of reservas">
+          <td>{{ reserva.Filmes }}</td>
+          <td>{{ reserva.tempoMaximo - reserva.tempoMinimo }} dias</td>
+          <td>R$ {{ reserva.preco }}</td>
+          <!-- <td> <button class="btn btn-info" (click)="detalhes(filme)">Detalhes</button></td>
+          <td> <button class="btn btn-success" (click)="reservar(filme)">Reservar</button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
